@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>PF TAsk </title>
+</head>
+<body>
+   <script>
+    var array = [3 , 0 , 2, 5 , -1 , 4 , 1 , 10 , 23 ,15 , 20 , 12];
+      function Quicksort(array){
+         if (array.length < 2){
+            return array;
+         }
+         let pivot_element = array[array.length - 1]
+         let left_array = [];
+         let right_array = [];
+         for (let i = 0; i < array.length - 1; i++){
+            if (array[i] < pivot_element) {
+               left_array.push(array[i])
+            } else {
+               right_array.push(array[i])
+            }
+         }
+         return [...Quicksort(left_array), pivot_element, ...Quicksort(right_array)];
+      }
+     
+      document.write(Quicksort(array));
+   </script>
+</body>
+</html>
